@@ -22,11 +22,11 @@ PUBLISH="${PUBLISH:="name=destination file-format=2 file-path=/tmp/results/r$cid
 if [ "$DECODE" == "vaapidecodebin" ]; then
     POSTPROC="! vaapipostproc"
 else
-    POSTPROC=""
+    POSTPROC="! videoconvert"
 fi 
 
 if [ "$RENDER_MODE" == "1" ]; then
-    OUTPUT="${OUTPUT:="$POSTPROC ! videoconvert ! video/x-raw,format=I420 ! gvawatermark ! videoconvert ! fpsdisplaysink video-sink=ximagesink sync=true --verbose"}"
+    OUTPUT="${OUTPUT:="$POSTPROC ! video/x-raw,format=I420 ! gvawatermark ! videoconvert ! fpsdisplaysink video-sink=ximagesink sync=true --verbose"}"
 else
     OUTPUT="${OUTPUT:="$POSTPROC ! fpsdisplaysink video-sink=fakesink sync=true --verbose"}"
 fi
