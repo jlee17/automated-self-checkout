@@ -26,7 +26,7 @@ else
 fi 
 
 if [ "$RENDER_MODE" == "1" ]; then
-    OUTPUT="${OUTPUT:="$POSTPROC ! vaapipostproc ! videoconvert ! video/x-raw,format=I420 ! gvawatermark ! videoconvert ! fpsdisplaysink video-sink=ximagesink sync=true --verbose"}"
+    OUTPUT="${OUTPUT:="$POSTPROC ! videoconvert ! video/x-raw,format=I420 ! gvawatermark ! videoconvert ! fpsdisplaysink video-sink=ximagesink sync=true --verbose"}"
 else
     OUTPUT="${OUTPUT:="$POSTPROC ! fpsdisplaysink video-sink=fakesink sync=true --verbose"}"
 fi
