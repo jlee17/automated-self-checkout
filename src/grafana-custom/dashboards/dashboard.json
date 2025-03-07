@@ -123,18 +123,8 @@
       "pluginVersion": "11.5.0",
       "targets": [
         {
-          "columns": [],
-          "datasource": {
-            "type": "grafana-mqtt-datasource",
-            "uid": "mqtt-datasource-uid"
-          },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "parser": "backend",
           "refId": "A",
-          "root_selector": "",
-          "type": "json"
+          "topic": "barcode/data"
         }
       ],
       "timeFrom": "now-5s",

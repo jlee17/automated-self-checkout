@@ -94,14 +94,10 @@ def main():
     while not shutdown:
         try:
             # Collect data from all sensors
-            sensors_data = []
             for sensor in sensors:
                 readings = sensor.get_readings()
-                sensors_data.append(readings)
-            
-            # Publish the combined payload
-            for publisher in publishers:
-                publisher.publish(sensors_data)
+                for publisher in publishers:
+                    publisher.publish(readings)
             
             time.sleep(publish_interval)
         except Exception as e:
