@@ -238,12 +238,14 @@
           "mode": "multi",
           "sort": "none"
         },
+        "xField": "item_id",
         "xTickLabelRotation": -45,
         "xTickLabelSpacing": 0
       },
       "pluginVersion": "11.5.0",
       "targets": [
         {
+          "jsonPath": "$.item_id",
           "refId": "A",
           "topic": "weight/data"
         }

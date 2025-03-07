@@ -9,7 +9,7 @@ def read_lidar_config() -> Dict:
     and return them as a dictionary.
     """
     config = {
-        "lidar_count": int(os.getenv("LIDAR_COUNT", "10")),
+        "lidar_count": int(os.getenv("LIDAR_COUNT", "2")),
         "lidar_sensors": [],
         "publishers": {
             "mqtt": {
@@ -30,7 +30,7 @@ def read_lidar_config() -> Dict:
         },
         "global": {
             "log_level": os.getenv("LIDAR_LOG_LEVEL", "INFO"),
-            "publish_interval": float(os.getenv("LIDAR_PUBLISH_INTERVAL", "1.0"))
+            "publish_interval": float(os.getenv("LIDAR_PUBLISH_INTERVAL", "5.0"))
         }
     }
 
@@ -55,7 +55,7 @@ def read_weight_config() -> Dict:
     and return them as a dictionary.
     """
     config = {
-        "weight_count": int(os.getenv("WEIGHT_COUNT", "1")),
+        "weight_count": int(os.getenv("WEIGHT_COUNT", "2")),
         "weight_sensors": [],
         "publishers": {
             "mqtt": {
@@ -76,7 +76,7 @@ def read_weight_config() -> Dict:
         },
         "global": {
             "log_level": os.getenv("WEIGHT_LOG_LEVEL", "INFO"),
-            "publish_interval": float(os.getenv("WEIGHT_PUBLISH_INTERVAL", "1.0"))
+            "publish_interval": float(os.getenv("WEIGHT_PUBLISH_INTERVAL", "5.0"))
         }
     }
 
