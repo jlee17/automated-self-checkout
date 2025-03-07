@@ -240,8 +240,7 @@
         },
         "xField": "item_id",
         "xTickLabelRotation": -45,
-        "xTickLabelSpacing": 0,
-        "scroll": true
+        "xTickLabelSpacing": 0
       },
       "pluginVersion": "11.5.0",
       "targets": [
