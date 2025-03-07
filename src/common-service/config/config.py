@@ -30,7 +30,7 @@ def read_lidar_config() -> Dict:
         },
         "global": {
             "log_level": os.getenv("LIDAR_LOG_LEVEL", "INFO"),
-            "publish_interval": float(os.getenv("LIDAR_PUBLISH_INTERVAL", "5.0"))
+            "publish_interval": float(os.getenv("LIDAR_PUBLISH_INTERVAL", "1.0"))
         }
     }
 
@@ -76,7 +76,7 @@ def read_weight_config() -> Dict:
         },
         "global": {
             "log_level": os.getenv("WEIGHT_LOG_LEVEL", "INFO"),
-            "publish_interval": float(os.getenv("WEIGHT_PUBLISH_INTERVAL", "5.0"))
+            "publish_interval": float(os.getenv("WEIGHT_PUBLISH_INTERVAL", "1.0"))
         }
     }
 
