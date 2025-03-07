@@ -52,7 +52,7 @@
             "mode": "thresholds"
           },
           "decimals": 1,
-          "displayName": "$itemName",
+          "displayName": "${__field.labels.item_name}",
           "fieldMinMax": true,
           "mappings": [],
           "thresholds": {
