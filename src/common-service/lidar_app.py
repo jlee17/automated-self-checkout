@@ -9,9 +9,6 @@ import logging
 import os
 import signal
 import time
-import random
-import math
-from datetime import datetime
 import numpy as np
 
 from config.publisher import create_publishers
