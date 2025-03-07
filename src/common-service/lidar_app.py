@@ -9,9 +9,6 @@ import logging
 import os
 import signal
 import time
-import random
-import math
-from datetime import datetime
 import numpy as np
 
 from config.publisher import create_publishers
@@ -95,7 +92,6 @@ def main():
     while not shutdown:
         try:
             # Collect data from all sensors
-            sensors_data = []
             for sensor in sensors:
                 readings = sensor.get_readings()
                 sensor_data = {
@@ -105,11 +101,9 @@ def main():
                     "height": readings["height"],
                     "size": readings["size"]
                 }
-                sensors_data.append(sensor_data)
+                for publisher in publishers:
+                    publisher.publish(sensor_data)
             
-            # Publish the combined payload
-            for publisher in publishers:
-                publisher.publish(sensor_data)
             
             time.sleep(publish_interval)
         except Exception as e:

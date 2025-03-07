@@ -107,7 +107,7 @@ services:
       LIDAR_MQTT_TOPIC: "lidar/data"
       LIDAR_HTTP_ENABLE: "true"
       LIDAR_HTTP_URL: "http://localhost:5000/api/lidar_data"
-      LIDAR_PUBLISH_INTERVAL: 1.0
+      LIDAR_PUBLISH_INTERVAL: 5.0
       LIDAR_LOG_LEVEL: INFO
 
       # Weight environment variables
@@ -127,7 +127,7 @@ services:
       WEIGHT_MQTT_TOPIC: "weight/data"
       WEIGHT_HTTP_ENABLE: "false"
       WEIGHT_HTTP_URL: ""
-      WEIGHT_PUBLISH_INTERVAL: 1.0
+      WEIGHT_PUBLISH_INTERVAL: 5.0
       WEIGHT_LOG_LEVEL: INFO
 
       # Barcode environment variables
