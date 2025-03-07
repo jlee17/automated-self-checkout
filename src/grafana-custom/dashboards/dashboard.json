@@ -323,7 +323,7 @@
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "/^size$/",
+          "fields": "/^size \\(lastNotNull\\)$/",
           "values": true
         },
         "showThresholdLabels": false,
@@ -338,6 +338,25 @@
         }
       ],
       "title": "Lidar Sensor Data",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "sensor_id": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "size": {
+                "aggregations": [
+                  "lastNotNull"
+                ],
+                "operation": "aggregate"
+              }
+            }
+          }
+        }
+      ],
       "type": "gauge"
     }
   ],
