@@ -9,7 +9,7 @@ def read_lidar_config() -> Dict:
     and return them as a dictionary.
     """
     config = {
-        "lidar_count": int(os.getenv("LIDAR_COUNT", "1")),
+        "lidar_count": int(os.getenv("LIDAR_COUNT", "10")),
         "lidar_sensors": [],
         "publishers": {
             "mqtt": {
