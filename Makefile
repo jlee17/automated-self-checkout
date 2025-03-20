@@ -45,10 +45,13 @@ build-pipeline-server: | download-models update-submodules download-sample-video
 	docker build -t dlstreamer:pipeline-server -f src/pipeline-server/Dockerfile.pipeline-server src/pipeline-server
 
 build-sensors:
-	docker compose -f src/$(DOCKER_COMPOSE) build
+	docker compose -f src/docker-compose-sensors.yml build
 
 run:
 	docker compose -f src/$(DOCKER_COMPOSE) up -d
+
+run-sensors:
+	docker compose -f src/${DOCKER_COMPOSE} -f src/docker-compose-sensors.yml up -d
 
 run-render-mode:
 	xhost +local:docker
@@ -56,6 +59,9 @@ run-render-mode:
 
 down:
 	docker compose -f src/$(DOCKER_COMPOSE) down
+
+down-sensors:
+	docker compose -f src/${DOCKER_COMPOSE} -f src/docker-compose-sensors.yml down
 
 run-demo: | download-models update-submodules download-sample-videos
 	@echo "Building automated self checkout app"	
